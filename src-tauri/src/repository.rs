@@ -1,1 +1,1 @@
-mod dialy;
+pub mod dialy_repository;
