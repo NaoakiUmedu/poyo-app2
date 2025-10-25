@@ -6,8 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2 // [!code ++]
-
+      - name: Setup Bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+      
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
