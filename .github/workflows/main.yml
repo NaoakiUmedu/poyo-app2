@@ -1,0 +1,11 @@
+name: poyo-app2 GitHub Actions
+run-name: ${{ github.actor }} is testing out GitHub Actions
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Frontend
+        run: bun install && bun test
+      - name: Test Backend
+        run: cd src-tauri && cargo test
