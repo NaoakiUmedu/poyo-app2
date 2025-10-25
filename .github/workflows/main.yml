@@ -10,6 +10,8 @@ jobs:
         uses: oven-sh/setup-bun@v1
 
       - uses: dtolnay/rust-toolchain@stable
+
+      - run: apt install libwebkit2gtk-4.0-dev libsoup3.0-dev
       
       - name: Test Frontend
         run: bun install && bun test
