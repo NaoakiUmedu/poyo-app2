@@ -5,6 +5,14 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2 // [!code ++]
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - uses: actions-rs/cargo@v1
+      
       - name: Test Frontend
         run: bun install && bun test
       - name: Test Backend
