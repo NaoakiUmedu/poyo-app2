@@ -11,9 +11,11 @@ jobs:
 
       - uses: dtolnay/rust-toolchain@stable
 
-      - run: sudo apt-get install libwebkit2gtk-4.0-37
-      - run: sudo apt-get install libsoup-3.0-dev
-      
+      - name: install dependencies (ubuntu only)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+
       - name: Test Frontend
         run: bun install && bun test
       - name: Test Backend
